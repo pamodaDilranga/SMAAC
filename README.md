@@ -1,5 +1,5 @@
-#Rootcode info
-Use Python 3.7.16
+# Rootcode info
+Use Python 3.7.16 ...
 Since chronic data is required to train or evaluate, please [Download](https://drive.google.com/file/d/1K6HnOKI4kZZ2fbtyRf3KuXx9vmM6TfD4/view?usp=sharing).  
 Then, replace `data/` with it.
 
