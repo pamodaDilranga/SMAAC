@@ -7,7 +7,7 @@ from argparse import ArgumentParser
 import numpy as np
 import torch
 import grid2op
-from lightsim2grid import LightSimBackend
+# from lightsim2grid import LightSimBackend
 from grid2op.Reward import L2RPNSandBoxScore
 from custom_reward import *
 from agent import Agent
@@ -125,8 +125,11 @@ if __name__ == '__main__':
                 ep_infos[i] = json.load(f)
 
     mode = 'last' if args.last else 'best'
-
+''' Original Code
     env = grid2op.make(env_path, test=True, reward_class=L2RPNSandBoxScore, backend=LightSimBackend(),
+                other_rewards={'loss': LossReward})
+'''
+    env = grid2op.make(env_path, test=True, reward_class=L2RPNSandBoxScore,
                 other_rewards={'loss': LossReward})
     env.deactivate_forecast()
     env.parameters.NB_TIMESTEP_OVERFLOW_ALLOWED = 3
