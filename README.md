@@ -1,3 +1,8 @@
+#Rootcode info
+Use Python 3.7.16
+Since chronic data is required to train or evaluate, please [Download](https://drive.google.com/file/d/1K6HnOKI4kZZ2fbtyRf3KuXx9vmM6TfD4/view?usp=sharing).  
+Then, replace `data/` with it.
+
 # Semi-Markov Afterstate Actor-Critic (SMAAC)
 This repository is the official implementation of [Winning the L2RPN Challenge: Power Grid Management via Semi-Markov Afterstate Actor-Critic](https://openreview.net/forum?id=LmUJqB1Cz8).
 
