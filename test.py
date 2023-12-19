@@ -7,7 +7,7 @@ from argparse import ArgumentParser
 import numpy as np
 import torch
 import grid2op
-from lightsim2grid import LightSimBackend
+#from lightsim2grid import LightSimBackend
 from grid2op.Reward import L2RPNSandBoxScore
 from custom_reward import *
 from agent import Agent
@@ -139,10 +139,15 @@ if __name__ == '__main__':
         for i in list(set(train_chronics+valid_chronics)):
             with open(os.path.join(dn_json_path, f'{i}.json'), 'r', encoding='utf-8') as f:
                 ep_infos[i] = json.load(f)
-
+''' Original code
     env = grid2op.make(env_path, test=True, reward_class=L2RPNSandBoxScore, backend=LightSimBackend(),
                 other_rewards={'loss': LossReward})
     test_env = grid2op.make(env_path, test=True, reward_class=L2RPNSandBoxScore, backend=LightSimBackend(),
+                other_rewards={'loss': LossReward})
+'''
+    env = grid2op.make(env_path, test=True, reward_class=L2RPNSandBoxScore,
+                other_rewards={'loss': LossReward})
+    test_env = grid2op.make(env_path, test=True, reward_class=L2RPNSandBoxScore,
                 other_rewards={'loss': LossReward})
     env.deactivate_forecast()
     test_env.deactivate_forecast()
